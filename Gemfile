@@ -4,6 +4,7 @@ gem 'sinatra',           require: 'sinatra/base'
 gem 'sinatra-assetpack', require: 'sinatra/assetpack'
 gem 'sinatra-contrib',   require: 'sinatra/reloader'
 
+gem 'sequel'
 gem 'thin'
 gem 'sequel'
 
@@ -24,3 +25,4 @@ end
 group :production do
   gem 'pg'  
 end
+

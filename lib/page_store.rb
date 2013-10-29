@@ -1,3 +1,4 @@
+require 'sequel'
 class PageStore
 
   def self.save(page)
@@ -20,6 +21,18 @@ class PageStore
   end
 
   def self.all
-    @all
+    @all ||= database[:pages].to_a
+  end
+
+  def self.clear
+    @all = []
+  end
+
+  def self.database
+    if ENV['RACK_ENV'] == 'test'
+      @database ||= Sequel.sqlite('./test.sqlite3')
+    else
+      @database ||= Sequel.sqlite('./clone_wars.sqlite3')
+    end
   end
 end

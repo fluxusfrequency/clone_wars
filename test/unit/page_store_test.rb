@@ -6,11 +6,11 @@ require './lib/page'
 class PageStoreTest < Minitest::Test
 
   def teardown
-    PageStore.all.clear
+    PageStore.clear
   end
 
   def test_save_and_retrieve_a_page
-    page = Page.new("about", "text", "images")
+    page = Page.new("title" => "about","body" => "text", "url" => "/sample")
     about = PageStore.save(page)
 
     assert_equal 1, PageStore.count
@@ -21,9 +21,9 @@ class PageStoreTest < Minitest::Test
   end
 
   def test_save_and_retrieve_one_of_many_pages
-    about = Page.new("about", "text on the about page", "path/images.jpg")
-    bikeshop = Page.new("bikeshop", "text on the bikeshop page", "path/images.jpg")
-    events = Page.new("events", "text on the events page", "path/images.jpg")
+    about = Page.new("title" => "about", "body" => "this is the body text", "url" => "/sample")
+    bikeshop = Page.new("title" => "bikeshop", "body" => "this is the body text", "url" => "/sample")
+    events = Page.new("title" => "events", "body" => "this is the body text", "url" => "/sample")
     id1 = PageStore.save(about)
     id2 = PageStore.save(bikeshop)
     id3 = PageStore.save(events)
@@ -35,7 +35,7 @@ class PageStoreTest < Minitest::Test
   end
 
   def test_update_idea
-    page = Page.new("events", "this is the body text", "path/image, otherpath/image")
+    page = Page.new("title" => "events","body" => "this is the body text", "url" => "/sample")
     id = PageStore.save(page)
 
     page = PageStore.find(id)
@@ -49,6 +49,25 @@ class PageStoreTest < Minitest::Test
     page = PageStore.find(id)
     assert_equal "events", page.title
     assert_equal "New body text!", page.body
+  end
+
+  def test_it_has_a_database
+    assert PageStore.database
+  end
+
+  def test_it_has_a_test_database
+    assert_equal Sequel.sqlite('./test.sqlite3').inspect, PageStore.database.inspect
+  end
+
+  def test_it_loads_the_database
+    assert_kind_of Page, PageStore.all.first
+  end
+
+  def test_it_can_find_a_page_by_id
+    page = Page.new("title" => "events", "body" => "this is the body text", "url" => "/sample")
+    id = PageStore.save(page)
+
+    assert_kind_of Page, PageStore.find(page.id)
   end
 
 end
