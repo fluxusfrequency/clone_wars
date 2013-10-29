@@ -4,12 +4,13 @@ gem 'sinatra',           require: 'sinatra/base'
 gem 'sinatra-assetpack', require: 'sinatra/assetpack'
 gem 'sinatra-contrib',   require: 'sinatra/reloader'
 
-gem 'slim'
 gem 'thin'
+gem 'sequel'
 
 group :development do
   gem "better_errors"
   gem 'binding_of_caller'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -18,4 +19,8 @@ group :test do
   gem 'sinatra-assetpack', require: 'sinatra/assetpack'
   gem 'capybara'
   gem 'pry', require: 'pry'
+end
+
+group :production do
+  gem 'pg'  
 end
