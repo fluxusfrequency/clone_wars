@@ -2,7 +2,7 @@ module Sinatra
   module About
 
     def self.registered(app)
-      app.get '/about/MissionVisionAndValues' do
+      app.get '/about/mission-vision-and-values' do
         slim :MissionVisionAndValues
       end
 
