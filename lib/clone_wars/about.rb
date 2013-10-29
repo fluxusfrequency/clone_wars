@@ -2,54 +2,49 @@ module Sinatra
   module About 
 
     def self.registered(app)
-    #--- "about" dropdown
-      app.get '/index/about/mission-vision-and-values' do
-        slim :whatever
+      app.get '/about/MissionVisionAndValues' do
+        slim :MissionVisionAndValues
       end
 
-      app.get '/index/about/history' do
-
+      app.get '/about/history' do
+        slim :History
       end
 
-      app.get '/index/about/staff-board' do
-
-      end
-    #---James Pullen Bio in /staff-board
-      app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/38-james-pullen' do
-
+      app.get '/about/staff-board' do
+        slim :StaffBoard
       end
 
-    #---Ryne Emory bio in /staff-board
-      app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/39-ryne-emory' do
-
+      app.get '/about/staff-board/17-about/staff-board/38-james-pullen' do
+        slim :JamesPullen
       end
 
-    #---Morgan Matter bio in /staff-board
-      app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/44-morgan-matter' do
+      app.get '/about/staff-board/17-about/staff-board/39-ryne-emory' do
+        slim :RyneEmory
+      end
 
+      app.get '/about/staff-board/17-about/staff-board/44-morgan-matter' do
+        slim :MorganMatter
       end  
-    #---Bill Davis bio in /staff-board
-      app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/43-bill-davis' do
 
+      app.get '/about/staff-board/17-about/staff-board/43-bill-davis' do
+        slim :BillDavis
       end
 
-    #---Mike Decker bio in /staff-board
-      app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/42-mike-decker' do
-
-      end  
-    #--- Board of Directors in /staff-board
-      app.get 'http://www.thebikedepot.org/index.php/about/staff-board/17-about/staff-board/7-board' do
-
+      app.get '/about/staff-board/17-about/staff-board/42-mike-decker' do
+        slim :MikeDecker
       end
 
-      app.get '/index/about/contact' do
-
+      app.get '/about/staff-board/17-about/staff-board/7-board' do
+        slim :BoardOfDirectors
       end
 
-      app.get '/index/about/privacy-policy' do
-
+      app.get '/about/contact' do
+        slim :ContactsHours
       end
-    #----end "about" dropdown
+
+      app.get '/about/PrivacyPolicy' do
+        slim :PrivacyPolicy
+      end
     end
   end
   register About
