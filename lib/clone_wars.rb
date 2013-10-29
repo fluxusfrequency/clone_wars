@@ -1,2 +1,3 @@
-require './clone_wars/users.rb'
-require './clone_wars/pages.rb'
+Dir["./clone_wars/*.rb"].each do |file|
+  require file
+end
