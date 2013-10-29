@@ -1,15 +1,19 @@
-class CloneWarsBikeShop < Sinatra::Base
+module Sinatra
+  module BikeShop 
 
-  get '/index/bike-shop/retail' do
+    def self.registered(app)
+      self.get '/bike-shop/retail' do
+        slim :Retail
+      end
 
+      self.get '/bike-shop/service' do
+        slim :ServiceMenu
+      end
+
+      self.get '/bike-shop/xtracycle' do
+        slim :Xtracycle
+      end
+    end
   end
-
-  get '/index/bike-shop/service' do
-
-  end
-
-  get '/index/bike-shop/xtracycle' do
-
-  end
- #---end "bike-shop" dropdown
+  register BikeShop
 end
