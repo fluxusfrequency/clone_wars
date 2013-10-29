@@ -1,23 +1,29 @@
-class CloneWarsProgram < Sinatra::Base
+module Sinatra
+  module Program
 
-  get '/index/programs/earn-a-bike' do
+    def self.registered(app)
 
-  end
+      app.get '/programs/earn-a-bike' do
+        slim :EarnABike
+      end
 
-  get '/index/programs/fix-your-bike' do
+      app.get '/programs/fix-your-bike' do
+        slim :FxYourBike
+      end
 
-  end
+      app.get '/programs/classes' do
+        slim :classes
+      end
 
-  get '/index/programs/classes' do
+      app.get '/programs/bike-camp' do
+        slim :BikeCamp
+      end
 
-  end
-
-  get '/index/programs/bike-camp' do
-
-  end
-
-  get '/index/programs/bike-rodeo' do
-
-  end
+      app.get '/programs/bike-rodeo' do
+        slim :BikeRodeo
+      end
 #---end "programs" dropdown
+    end
+  end
+  register Program
 end

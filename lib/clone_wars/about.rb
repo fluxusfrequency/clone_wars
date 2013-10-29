@@ -1,5 +1,5 @@
 module Sinatra
-  module About 
+  module About
 
     def self.registered(app)
     #--- "about" dropdown
@@ -27,7 +27,7 @@ module Sinatra
     #---Morgan Matter bio in /staff-board
       app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/44-morgan-matter' do
 
-      end  
+      end
     #---Bill Davis bio in /staff-board
       app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/43-bill-davis' do
 
@@ -36,7 +36,7 @@ module Sinatra
     #---Mike Decker bio in /staff-board
       app.get 'http://www.thebikedepot.org/index/about/staff-board/17-about/staff-board/42-mike-decker' do
 
-      end  
+      end
     #--- Board of Directors in /staff-board
       app.get 'http://www.thebikedepot.org/index.php/about/staff-board/17-about/staff-board/7-board' do
 

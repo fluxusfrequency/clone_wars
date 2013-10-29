@@ -1,16 +1,22 @@
-class CloneWarsLinks < Sinatra::Base
+module Sinatra
+  module Links
 
-  get '/index/links/business-partners' do
+    def self.registered(app)
 
-  end
+      app.get '/links/business-partners' do
+        slim :BusinessPartners
+      end
 
-  get '/index/links/friends' do
+      app.get '/links/friends' do
+        slim :friends
+      end
 
-  end
-
-  get '/index/links/we-love' do
-
-  end
+      app.get '/links/we-love' do
+        slim :WeLove
+      end
 
 #--- end "Links" dropdown
+    end
+  end
+  register Links
 end
