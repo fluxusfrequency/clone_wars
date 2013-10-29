@@ -1,4 +1,4 @@
-link href="http://www.thebikedepot.org/modules/mod_djimageslider/assets/style.css" rel="stylesheet" type="text/css"
+link href="/modules/mod_djimageslider/assets/style.css"rel="stylesheet" type="text/css"
 javascript:
   | (function($){ window.addEvent('domready',function(){this.Slider130 = new DJImageSlider({id: '130', slider_type: 2, slide_size: 700, visible_slides: 1, show_buttons: 0, show_arrows: 1, preload: 800},{auto: 1, transition: Fx.Transitions.linear, duration: 600, delay: 3600})}); })(document.id);
 css:
@@ -95,12 +95,12 @@ css:
     | right: 0;
   | }
   
-#content-w2
-  #content-top
-    #djslider-loader130.djslider-loader
-      #djslider130.djslider
-        #slider-container130.slider-container
-          ul#slider130
+div class="content-w2"
+  div class="content-top"
+    div class="djslider-loader130.djslider-loader"
+      div class="djslider130.djslider"
+        div class="slider-container130.slider-container"
+          ul class="slider130"
             li
               a href="/about/contact" target="_self"
                 img alt="Bike Depot Staff" src="/images/depot%20staff.jpg"
@@ -144,8 +144,8 @@ css:
           img#prev130.prev-button alt="Previous" src="http://thebikedepot.org//modules/mod_djimageslider/assets/prev.png"
             img#next130.next-button alt="Next" src="http://thebikedepot.org//modules/mod_djimageslider/assets/next.png"
     div style="clear: both"
-  #system-message-container
-  .item-page
+  div class="system-message-container"
+  div id="item-page"
     h1
       | Home
     p

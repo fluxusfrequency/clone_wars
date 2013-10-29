@@ -10,7 +10,7 @@ module Sinatra
       end
 
       app.get '/programs/fix-your-bike' do
-        slim :FxYourBike
+        slim :FixYourBike
       end
 
       app.get '/programs/classes' do

@@ -6,7 +6,7 @@ module Sinatra
     def self.registered(app)
 
       app.get '/support/volunteer' do
-        slim :volunteer
+        slim :Volunteer
       end
 
       app.get '/support/volunteer/21-new-volunteers' do
@@ -41,7 +41,7 @@ module Sinatra
     #   end
 
       app.get '/support/memberships' do
-        slim :memberships
+        slim :Memberships
       end
 
       app.get '/support/wish-list' do

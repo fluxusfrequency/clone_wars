@@ -28,6 +28,7 @@ module Sinatra
         slim :Links
       end
     end
+    
   end
   register BasicRoutes
 end

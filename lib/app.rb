@@ -25,22 +25,22 @@ class CloneWarApp < Sinatra::Base
     slim :Home
   end
 
-#--- googlemaps link
+# #--- googlemaps link
   
-  get 'https://maps.google.com/maps?ie=UTF8&cid=10676092889539153742&q=The+Bike+Depot&iwloc=A&gl=US&hl=en-US' do
+#   get 'https://maps.google.com/maps?ie=UTF8&cid=10676092889539153742&q=The+Bike+Depot&iwloc=A&gl=US&hl=en-US' do
 
-  end
-#---- GivingFirst link
+#   end
+# #---- GivingFirst link
 
-  get 'http://www.givingfirst.org/index.php?section=organizations&action=newDonation&fwID=27598' do
+#   get 'http://www.givingfirst.org/index.php?section=organizations&action=newDonation&fwID=27598' do
 
-  end
+#   end
 
-#---- Facebook link
+# #---- Facebook link
 
-  get 'https://www.facebook.com/TheBikeDepot' do
+#   get 'https://www.facebook.com/TheBikeDepot' do
 
-  end
+#   end
 
-#----
+# #----
 end
