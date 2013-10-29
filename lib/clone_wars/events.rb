@@ -1,13 +1,15 @@
+require 'sinatra/base'
+
 module Sinatra
   module Events
 
     def self.registered(app)
 
-      get '/events/calendar' do
+      app.get '/events/calendar' do
         slim :calendar
       end
 
-      get '/events/park-hill-family-bike-ride' do
+      app.get '/events/park-hill-family-bike-ride' do
         slim :ParkHillFamilyBikeRide
       end
     #---end of "events" dropdown

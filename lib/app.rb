@@ -1,8 +1,18 @@
-require 'clone_wars.rb'
 require 'sinatra'
 require 'sinatra/base'
+require 'slim'
+require './lib/clone_wars'
+require './lib/clone_wars/about'
+require './lib/clone_wars/bike-shop'
+require './lib/clone_wars/events'
+require './lib/clone_wars/links'
+require './lib/clone_wars/program'
+require './lib/clone_wars/support'
+
+
 
 class CloneWarApp < Sinatra::Base
+  set :root, 'lib/app'
 
   register Sinatra::About
   register Sinatra::BikeShop
@@ -12,7 +22,7 @@ class CloneWarApp < Sinatra::Base
   register Sinatra::Support
 
   get '/' do
-    slim :home
+    slim :Home
   end
 
 #--- googlemaps link

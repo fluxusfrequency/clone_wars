@@ -1,16 +1,18 @@
+require 'sinatra/base'
+
 module Sinatra
   module BikeShop 
 
     def self.registered(app)
-      self.get '/bike-shop/retail' do
+      app.get '/bike-shop/retail' do
         slim :Retail
       end
 
-      self.get '/bike-shop/service' do
+      app.get '/bike-shop/service' do
         slim :ServiceMenu
       end
 
-      self.get '/bike-shop/xtracycle' do
+      app.get '/bike-shop/xtracycle' do
         slim :Xtracycle
       end
     end

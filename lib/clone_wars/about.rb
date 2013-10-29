@@ -1,3 +1,5 @@
+require 'sinatra/base'
+
 module Sinatra
   module About
 
@@ -46,6 +48,7 @@ module Sinatra
         slim :PrivacyPolicy
       end
     end
+    
   end
   register About
 end
