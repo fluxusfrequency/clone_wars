@@ -1,13 +1,17 @@
-require './clone_wars.rb'
+require 'clone_wars.rb'
+require 'sinatra'
+require 'sinatra/base'
 
 class CloneWarApp < Sinatra::Base
 
+  register Sinatra::About
+
   get '/' do
-    
+    slim :home
   end
 
   get '/index/about' do
-
+    slim :about
   end
 
   get '/index/programs' do
