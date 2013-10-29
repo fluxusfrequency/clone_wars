@@ -3,18 +3,18 @@ require 'sinatra/base'
 require 'slim'
 require './lib/clone_wars'
 require './lib/clone_wars/about'
+require './lib/clone_wars/basic_routes'
 require './lib/clone_wars/bike-shop'
 require './lib/clone_wars/events'
 require './lib/clone_wars/links'
 require './lib/clone_wars/program'
 require './lib/clone_wars/support'
 
-
-
 class CloneWarApp < Sinatra::Base
   set :root, 'lib/app'
 
   register Sinatra::About
+  register Sinatra::BasicRoutes
   register Sinatra::BikeShop
   register Sinatra::Events
   register Sinatra::Links

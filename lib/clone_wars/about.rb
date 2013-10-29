@@ -41,10 +41,10 @@ module Sinatra
       end
 
       app.get '/about/contact' do
-        slim :ContactsHours
+        slim :ContactHours
       end
 
-      app.get '/about/PrivacyPolicy' do
+      app.get '/about/privacy-policy' do
         slim :PrivacyPolicy
       end
     end

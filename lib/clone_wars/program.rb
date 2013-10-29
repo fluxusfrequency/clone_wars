@@ -14,7 +14,7 @@ module Sinatra
       end
 
       app.get '/programs/classes' do
-        slim :classes
+        slim :Classes
       end
 
       app.get '/programs/bike-camp' do
