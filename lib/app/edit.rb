@@ -18,7 +18,7 @@ module Sinatra
         { "title" => params["title"], 
           "body" => params["body"], 
           "url" => params["url"] }
-        puts PageStore.update(page, attributes).inspect
+        PageStore.update(page, attributes)
         redirect "#{page.url}"
       end
     end

@@ -57,6 +57,7 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
     <div id="search">   
       
     </div>
+    <%= styled_flash %>
   </div>
   
   <div id="topmenu">
@@ -119,7 +120,6 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
 
 
   <!-- Contents -->
-  <%= styled_flash %>
   <%= yield %>
 
   <!-- Three Picture Places -->
@@ -141,17 +141,22 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
 <!-- Footer -->
 
 <div id="footer">
-  <br /><br /><br /><br /><br /><br />
-  <p style="font-size: 0.8em; display: inline">Admin:</p>
-  <% unless authorized? %>
-    <a href="/login" style="font-size: 0.8em; display: inline">Login</a>
-  <% else %>
-    <form action="/edit" method = 'GET'>
-      <input type='hidden' name="url" value="<%=url%>"/>
-      <a href="edit" style="font-size: 0.8em; display: inline">Edit This Page</a>
-    </form> 
-    <a href="/logout" style="font-size: 0.8em; display: inline">Logout</a>
-  <% end %>  
+  <fieldset>
+    <p style="display: inline">Admin:</p>
+    <% unless authorized? %>
+      <form action="/login" method='GET' style="display: inline">
+        <input type='submit' name="login" value="Login"/>
+      </form>
+    <% else %>
+      <form action="/edit" method='GET' style="display: inline">
+        <input type='hidden' name="url" value="<%=url%>"/>
+        <input type='submit' value="Edit" style="display: inline">
+      </form> 
+      <form action="/logout" method='GET' style="display: inline">
+        <input type='submit' name="logout" value="Logout"/>
+      </form>
+    <% end %>
+  </fieldset>
 </div>
 
 
