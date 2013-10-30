@@ -7,17 +7,23 @@ module Sinatra
 
       app.get '/programs/earn-a-bike' do
         url = '/programs/earn-a-bike'
-        erb :EarnABike, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/programs/fix-your-bike' do
         url = '/programs/fix-your-bike' 
-        erb :FixYourBike, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/programs/classes' do
         url = '/programs/classes'
-        erb :Classes, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/programs/bike-camp' do
@@ -27,7 +33,9 @@ module Sinatra
 
       app.get '/programs/bike-rodeo' do
         url = '/programs/bike-rodeo'
-        erb :BikeRodeo, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 #---end "programs" dropdown
     end

@@ -7,12 +7,16 @@ module Sinatra
 
       app.get '/support/volunteer' do
         url = '/support/volunteer'
-        erb :Volunteer, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/support/volunteer/21-new-volunteers' do
         url = '/support/volunteer/21-new-volunteers'
-        erb :NewVolunteers, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
     # #---- Standard Volunteer application link in /volunteer
@@ -32,12 +36,16 @@ module Sinatra
 
       app.get '/support/donate-bikes' do
         url = '/support/donate-bikes'
-        erb :DonateBikes, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/support/organizing-a-bike-collection-drive' do
         url = '/support/organizing-a-bike-collection-drive'
-        erb :OrganizingABikeCollectionDrive, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
     # #---Link to PDF in /organizing-a-bike-collection-drive
     #   app.get 'images/support/bikedrivepdf/hosting_a_bike_drive.pdf' do
@@ -46,12 +54,16 @@ module Sinatra
 
       app.get '/support/memberships' do
         url = '/support/memberships'
-        erb :Memberships, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/support/wish-list' do
         url = '/support/wish-list'
-        erb :WishList, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 #----end of "support" dropdown
     end

@@ -7,17 +7,23 @@ module Sinatra
 
       app.get '/links/business-partners' do
         url = '/links/business-partners'
-        erb :BusinessPartners, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/links/friends' do
         url = '/links/friends'
-        erb :Friends, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/links/we-love' do
         url = '/links/we-love'
-        erb :WeLove, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
 #--- end "Links" dropdown
