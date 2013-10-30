@@ -6,11 +6,13 @@ module Sinatra
     def self.registered(app)
 
       app.get '/events/calendar' do
-        erb :calendar
+        url = '/events/calendar'
+        erb :calendar, locals: {url: url}
       end
 
       app.get '/events/park-hill-family-bike-ride' do
-        erb :ParkHillFamilyBikeRide
+        url = '/events/park-hill-family-bike-ride'
+        erb :ParkHillFamilyBikeRide, locals: {url: url}
       end
     #---end of "events" dropdown
     end

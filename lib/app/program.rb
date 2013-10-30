@@ -6,23 +6,28 @@ module Sinatra
     def self.registered(app)
 
       app.get '/programs/earn-a-bike' do
-        erb :EarnABike
+        url = '/programs/earn-a-bike'
+        erb :EarnABike, locals: {url: url}
       end
 
       app.get '/programs/fix-your-bike' do
-        erb :FixYourBike
+        url = '/programs/fix-your-bike' 
+        erb :FixYourBike, locals: {url: url}
       end
 
       app.get '/programs/classes' do
-        erb :Classes
+        url = '/programs/classes'
+        erb :Classes, locals: {url: url}
       end
 
       app.get '/programs/bike-camp' do
-        erb :BikeCamp
+        url = '/programs/bike-camp'
+        erb :BikeCamp, locals: {url: url}
       end
 
       app.get '/programs/bike-rodeo' do
-        erb :BikeRodeo
+        url = '/programs/bike-rodeo'
+        erb :BikeRodeo, locals: {url: url}
       end
 #---end "programs" dropdown
     end

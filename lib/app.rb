@@ -8,6 +8,7 @@ require './lib/app/events'
 require './lib/app/links'
 require './lib/app/program'
 require './lib/app/support'
+require './lib/app/edit'
 
 class CloneWarApp < Sinatra::Base
   set :root, 'lib/app'
@@ -22,7 +23,8 @@ class CloneWarApp < Sinatra::Base
   register Sinatra::Edit
 
   get '/' do
-    erb :Home
+    url = '/'
+    erb :Home, locals: {url: url}
   end
 
 #--- googlemaps link

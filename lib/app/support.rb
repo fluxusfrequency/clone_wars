@@ -6,11 +6,13 @@ module Sinatra
     def self.registered(app)
 
       app.get '/support/volunteer' do
-        erb :Volunteer
+        url = '/support/volunteer'
+        erb :Volunteer, locals: {url: url}
       end
 
       app.get '/support/volunteer/21-new-volunteers' do
-        erb :NewVolunteers
+        url = '/support/volunteer/21-new-volunteers'
+        erb :NewVolunteers, locals: {url: url}
       end
 
     # #---- Standard Volunteer application link in /volunteer
@@ -29,11 +31,13 @@ module Sinatra
     #   end
 
       app.get '/support/donate-bikes' do
-        erb :DonateBikes
+        url = '/support/donate-bikes'
+        erb :DonateBikes, locals: {url: url}
       end
 
       app.get '/support/organizing-a-bike-collection-drive' do
-        erb :OrganizingABikeCollectionDrive
+        url = '/support/organizing-a-bike-collection-drive'
+        erb :OrganizingABikeCollectionDrive, locals: {url: url}
       end
     # #---Link to PDF in /organizing-a-bike-collection-drive
     #   app.get 'images/support/bikedrivepdf/hosting_a_bike_drive.pdf' do
@@ -41,11 +45,13 @@ module Sinatra
     #   end
 
       app.get '/support/memberships' do
-        erb :Memberships
+        url = '/support/memberships'
+        erb :Memberships, locals: {url: url}
       end
 
       app.get '/support/wish-list' do
-        erb :WishList
+        url = '/support/wish-list'
+        erb :WishList, locals: {url: url}
       end
 #----end of "support" dropdown
     end

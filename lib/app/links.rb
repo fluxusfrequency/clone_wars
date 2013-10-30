@@ -6,15 +6,18 @@ module Sinatra
     def self.registered(app)
 
       app.get '/links/business-partners' do
-        erb :BusinessPartners
+        url = '/links/business-partners'
+        erb :BusinessPartners, locals: {url: url}
       end
 
       app.get '/links/friends' do
-        erb :Friends
+        url = '/links/friends'
+        erb :Friends locals: {url: url}
       end
 
       app.get '/links/we-love' do
-        erb :WeLove
+        url = '/links/we-love'
+        erb :WeLove, locals: {url: url}
       end
 
 #--- end "Links" dropdown

@@ -1,0 +1,19 @@
+<div id="content-w2"> 
+        
+  <div id="system-message-container">
+  </div>
+    <div class="item-page">
+
+<form action='/<%=page.url %>' method='POST'>
+
+  You are editing : <%=page.url %> <br/><br/>
+
+
+
+  <input type='text' name='page[title]'  value="<%= page.title %>"/> Page Title<br/><br/>
+  <p> Make Changes to body text: <p>
+  <textarea name='page[body]'style="width: 1200px; height: 1500px;"><%= page.body %></textarea> Body<br/>
+  <input type='submit'>Submit Your Changes></input>
+  </form>
+    </div>
+</div>
