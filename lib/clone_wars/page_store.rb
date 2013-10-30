@@ -37,6 +37,7 @@ class PageStore
     new_page = Page.new(found.to_h.merge(attributes))
     delete(found)
     save(new_page)
+    new_page
   end
 
   def delete(page)

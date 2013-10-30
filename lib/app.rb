@@ -15,6 +15,7 @@ require './lib/app/edit'
 
 class CloneWarApp < Sinatra::Base
   set :root, 'lib/app'
+  set :method_override, true
 
   register Sinatra::About
   register Sinatra::Auth

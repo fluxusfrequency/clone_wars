@@ -6,7 +6,9 @@ module Sinatra
     def self.registered(app)
       app.get '/about' do
         url = '/about'
-        erb :About, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/programs' do
