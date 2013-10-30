@@ -19,6 +19,7 @@ class CloneWarApp < Sinatra::Base
   register Sinatra::Links
   register Sinatra::Program
   register Sinatra::Support
+  register Sinatra::Edit
 
   get '/' do
     erb :Home
