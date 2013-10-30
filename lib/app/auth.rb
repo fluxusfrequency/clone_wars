@@ -10,7 +10,10 @@ module Sinatra
       end
 
       def protected!
-        halt 401,slim(:unauthorized) unless authorized?
+        unless authorized?
+          flash[:notice] = "You must be logged in to do that."
+          redirect '/login'
+        end
       end
     end
 

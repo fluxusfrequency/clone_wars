@@ -6,11 +6,13 @@ module Sinatra
     def self.registered(app)
 
       app.get '/edit' do
+        protected!
         page = PageStore.find_by_url(params["url"])
         erb :edit, locals: {page: page}
       end
 
       app.put '/edit' do
+        protected!
         page = PageStore.find_by_url(params["url"])
         attributes = 
         { "title" => params["title"], 

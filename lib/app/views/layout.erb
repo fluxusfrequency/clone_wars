@@ -136,18 +136,23 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
       
     </div>
 
-  <!-- Footer -->
-  <div id="footer">
-    <form action="/edit" method = 'GET'>
-      <input type='hidden' name="url" value="<%=url%>"/>
-      <input type='submit' value="EDIT"/>
-      </form>   
-  </div>
-
-  <div id="push"></div>
-
 </div>
 
+<!-- Footer -->
+
+<div id="footer">
+  <br /><br /><br /><br /><br /><br />
+  <p style="font-size: 0.8em; display: inline">Admin:</p>
+  <% unless authorized? %>
+    <a href="/login" style="font-size: 0.8em; display: inline">Login</a>
+  <% else %>
+    <form action="/edit" method = 'GET'>
+      <input type='hidden' name="url" value="<%=url%>"/>
+      <a href="edit" style="font-size: 0.8em; display: inline">Edit This Page</a>
+    </form> 
+    <a href="/logout" style="font-size: 0.8em; display: inline">Logout</a>
+  <% end %>  
+</div>
 
 
 </body>
