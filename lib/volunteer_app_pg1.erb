@@ -1,134 +1,71 @@
-
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><title>
-
-    Sign Up
-
-</title>
-    <link rel="shortcut icon" href="https://cdn.volunteer2.com/images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.volunteer2.com/combres.axd/minimalVolunteerCss/-1999739599/minimalVolunteerCss.css"/>
-    <style type="text/css">
-        body,html{margin:0;padding:0;text-align:center;color:#000;font-size:13px}input{width:150px}
-    </style>
-
-<script type="text/javascript">
-    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-26840587-1']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s) })();
-</script>
-<noscript></noscript>
-<script type="text/javascript">
-    var _prum = { id: "50c8871194fe9c0d1f000002" }; var PRUM_EPISODES = PRUM_EPISODES || {}; PRUM_EPISODES.q = []; PRUM_EPISODES.mark = function (b, a) { PRUM_EPISODES.q.push(["mark", b, a || new Date().getTime()]) }; PRUM_EPISODES.measure = function (b, a, b) { PRUM_EPISODES.q.push(["measure", b, a, b || new Date().getTime()]) }; PRUM_EPISODES.done = function (a) { PRUM_EPISODES.q.push(["done", a]) }; PRUM_EPISODES.mark("firstbyte"); (function () { var b = document.getElementsByTagName("script")[0]; var a = document.createElement("script"); a.type = "text/javascript"; a.async = true; a.charset = "UTF-8"; a.src = "//rum-static.pingdom.net/prum.min.js"; b.parentNode.insertBefore(a, b) })();
-</script>
-<noscript></noscript>
-<script type="text/javascript">
-    (function (_, e, rr, s) {
-        _errs = [s]; var c = _.onerror; _.onerror = function () {
-            var a = arguments; _errs.push(a);
-            c && c.apply(this, a)
-        }; var b = function () {
-            var c = e.createElement(rr), b = e.getElementsByTagName(rr)[0];
-            c.src = "//beacon.errorception.com/" + s + ".js"; c.async = !0; b.parentNode.insertBefore(c, b)
-        };
-        _.addEventListener ? _.addEventListener("load", b, !1) : _.attachEvent("onload", b)
-    })
-    (window, document, "script", "4fc8caaede28a4161c000521");
-</script>
-<noscript></noscript></head>
-<body>
-    <script src="https://cdn.volunteer2.com/res/jslocalizedstrings/17/en-US.js" type="text/javascript"></script><noscript></noscript>
-    <script type="text/javascript" src="https://cdn.volunteer2.com/combres.axd/mustComeFirstJs/113213878/mustComeFirstJs.js"></script><noscript></noscript>
-    <script type="text/javascript" src="https://cdn.volunteer2.com/combres.axd/signUpJs/2013793312/signUpJs.js"></script><noscript></noscript>
-    <div id="MasterBannerHolder" class="MasterPageTopSectionBackgroundColor"   >
-        <div id="MasterBannerInsideHolder" class="FullWidthCenteredForMaster"><img src="*********" alt="THE BIKE DEPOT" border="0" /></div>
-    </div>
-    <div style="width:934px; margin:0 auto; text-align:left;border:1px solid #cccccc;margin-top:28px;padding:33px;"> -->
-
-
-
-<form id="NewUserContactDetailsForm" action="/Public/SignUp/NewUserContactDetails" method="post" enctype="application/x-www-form-urlencoded" >
+<h1 class="MediumLargeHeader Underline">Volunteer Application</h1>
+<form id="application" action="/application" method="post" >
     <table>
         <tr>
             <td>
-                <label for="Username">Username:</label>
+                <label for="nametitle">Title:</label>
             </td>
             <td>
-                <input id="Username" maxlength="100" name="Username" type="text" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' />
-            </td>
-        </tr>
-        <tr>
-            <td><label for="Password">Password:</label></td>
-            <td><input id="Password" maxlength="50" name="Password" type="password" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' /></td>
-        </tr>
-            <tr>
-            <td><label for="ConfirmPassword">Confirm Password:</label></td>
-            <td><input id="ConfirmPassword" maxlength="50" name="ConfirmPassword" type="password" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' /></td>
-        </tr>
-        <tr>
-            <td>
-                <label for="NameTitle">Title:</label>
-            </td>
-            <td>
-                <div class="watermarkText"><span id="NameTitleOver" class="over"></span><input class="overMe" id="NameTitle" maxlength="50" name="NameTitle" type="text" value="" /></div>
+                <input id="nametitle" maxlength="50" name="nametitle" type="text" value="" />
             </td>
         </tr>
         <tr>
             <td>
-                <label for="NameFirstName">First Name:</label>
+                <label for="namefirstname">First Name:</label>
             </td>
             <td>
-                <input id="NameFirstName" maxlength="50" name="NameFirstName" type="text" value="" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' />
+                <input id="namefirstname" maxlength="50" name="namefirstname" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' />
             </td>
 
         </tr>
         <tr>
             <td>
-                <label for="NameMiddleName">Middle name:</label>
+                <label for="namemiddlename">Middle name:</label>
             </td>
             <td>
-                <input id="NameMiddleName" maxlength="50" name="NameMiddleName" type="text" value="" />
+                <input id="namemiddlename" maxlength="50" name="namemiddlename" type="text" value="" />
             </td>
         </tr>
         <tr>
             <td>
-                <label for="NameLastName">Last Name:</label>
+                <label for="namelastname">Last Name:</label>
             </td>
             <td>
-                <input id="NameLastName" maxlength="50" name="NameLastName" type="text" value="" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' />
+                <input id="namelastname" maxlength="50" name="namelastname" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' />
             </td>
         </tr>
 
             <tr>
             <td>
-                <label for="NameSuffix">Suffix:</label>
+                <label for="namesuffix">Suffix:</label>
             </td>
             <td>
-                <div class="watermarkText"><span id="NameSuffixOver" class="over"></span><input class="overMe" id="NameSuffix" maxlength="50" name="NameSuffix" type="text" value="" /></div>
+                <input id="namesuffix" maxlength="50" name="namesuffix" type="text" value="" />
             </td>
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-            <td><label for="AddressAddress1">Address Line 1:</label></td>
-            <td><input id="AddressAddress1" maxlength="100" name="AddressAddress1" type="text" value="" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' /></td>
+            <td><label for="addressaddress1">Address Line 1:</label></td>
+            <td><input id="addressaddress1" maxlength="100" name="addressaddress1" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' /></td>
         </tr>
         <tr>
-            <td><label for="AddressAddress2">Address Line 2:</label></td>
-            <td><input id="AddressAddress2" maxlength="100" name="AddressAddress2" type="text" value="" /></td>
+            <td><label for="addressaddress2">Address Line 2:</label></td>
+            <td><input id="addressaddress2" maxlength="100" name="addressaddress2" type="text" value="" /></td>
         </tr>
         <tr>
             <td>
-                <label for="AddressCity">City:</label>
+                <label for="addresscity">City:</label>
             </td>
             <td>
-                <input id="AddressCity" maxlength="50" name="AddressCity" type="text" value="" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' />
+                <input id="addresscity" maxlength="50" name="addresscity" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' />
             </td>
         </tr>
 
 <tr>
-    <td class="TopAlignMe LabelText"><label for="AddressCountryId">Country:</label></td>
-    <td><select id="AddressCountryId" name="AddressCountryId" class="CountrySelect">
+    <td class="TopAlignMe LabelText"><label for="addresscountryid">Country:</label></td>
+    <td><select id="addresscountryid" name="addresscountryid" class="CountrySelect">
 
                 <option id="AddressCountryIdCANADA" value="CANADA" > Canada</option>
 
@@ -788,10 +725,10 @@
     </td>
 </tr>
 <tr>
-    <td class="TopAlignMe LabelText"><label for="AddressProvinceId">State:</label></td>
+    <td class="TopAlignMe LabelText"><label for="addressprovinceid">State:</label></td>
     <td>
         <span class="ProvinceHolder" id="AddressProvinceIdHolder">
-            <select id="AddressProvinceId" name="AddressProvinceId" class="ProvinceSelect">
+            <select id="addressprovinceid" name="addressprovinceid" class="ProvinceSelect">
 
                     <option id="AddressProvinceId00" class="" value="00"  > </option>
 
@@ -1496,14 +1433,14 @@
 
         </span>
         <script type="text/javascript">
-            var CleanProvinceListAddressCountryId = $('#AddressProvinceId').clone();
+            var CleanProvinceListAddressCountryId = $('#addressprovinceid').clone();
 
             $(function () {
                 //the original list
-                 v2ResetProvinceListAddressCountryId($('#AddressCountryId'));
+                 v2ResetProvinceListAddressCountryId($('#addresscountryid'));
 
-                $('#AddressCountryId').change(function () {
-                    v2ResetProvinceListAddressCountryId($('#AddressCountryId'));
+                $('#addresscountryid').change(function () {
+                    v2ResetProvinceListAddressCountryId($('#addresscountryid'));
 
                 });
             });
@@ -1521,7 +1458,7 @@
                 });
 
                 if (newList.children().length == 0) {
-                    var hiddenControl = $('<input type="hidden" />').attr('id', 'AddressProvinceId').attr('name', 'AddressProvinceId').val('00');
+                    var hiddenControl = $('<input type="hidden" />').attr('id', 'addressprovinceid').attr('name', 'addressprovinceid').val('00');
                     holder.html(hiddenControl);
                 }
                 else {
@@ -1538,60 +1475,57 @@
 
         <tr>
             <td>
-                <label for="AddressPostalCode">Zip Code:</label>
+                <label for="addresspostalcode">Zip Code:</label>
             </td>
             <td>
-                <input id="AddressPostalCode" maxlength="10" name="AddressPostalCode" type="text" value="" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' />
+                <input id="addresspostalcode" maxlength="10" name="addresspostalcode" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' />
             </td>
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-            <td> <label for="EmailAddressValue">Primary Email:</label></td>
-            <td><input id="EmailAddressValue" maxlength="100" name="EmailAddressValue" type="text" value="email" /><img src='https://cdn.volunteer2.com/images/asterix.gif' class='RequiredFieldMarker LegendMe TipMe'  style='display:inline;' alt='Required' /></td>
+            <td> <label for="emailaddressvalue">Primary Email:</label></td>
+            <td><input id="emailaddressvalue" maxlength="100" name="emailaddressvalue" type="text" value="" /><img src='/images/asterix.gif' class='RequiredFieldMarker'  style='display:inline;' alt='Required' /></td>
         </tr>
 
         <tr>
-            <td><label for="SecondaryEmailAddressValue">Secondary Email:</label></td>
-            <td><input id="SecondaryEmailAddressValue" maxlength="100" name="SecondaryEmailAddressValue" type="text" value="" /></td>
+            <td><label for="secondaryemailaddressvalue">Secondary Email:</label></td>
+            <td><input id="secondaryemailaddressvalue" maxlength="100" name="secondaryemailaddressvalue" type="text" value="" /></td>
         </tr>
         <tr>
-            <td><label for="MobileEmailAddressValue">Mobile Email:</label></td>
-            <td><input id="MobileEmailAddressValue" maxlength="100" name="MobileEmailAddressValue" type="text" value="" /></td>
-        </tr>
-        <tr>
-            <td colspan="2">*Not available in all areas. <a href="http://en.wikipedia.org/wiki/List_of_SMS_gateways" target="_blank">Click here for details</a></td>
+            <td><label for="mobileemailaddressvalue">Mobile Email:</label></td>
+            <td><input id="mobileemailaddressvalue" maxlength="100" name="mobileemailaddressvalue" type="text" value="" /></td>
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>
         </tr>
 
         <tr>
-            <td><label for="HomePhoneNumber">Home Phone:</label></td>
-            <td><input id="HomePhoneNumber" maxlength="25" name="HomePhoneNumber" type="text" value="" /></td>
+            <td><label for="homephonenumber">Home Phone:</label></td>
+            <td><input id="homephonenumber" maxlength="25" name="homephonenumber" type="text" value="" /></td>
         </tr>
         <tr>
-            <td><label for="WorkPhoneNumber">Work Phone:</label></td>
-            <td> <input id="WorkPhoneNumber" maxlength="25" name="WorkPhoneNumber" type="text" value="" /></td>
+            <td><label for="workphonenumber">Work Phone:</label></td>
+            <td> <input id="workphonenumber" maxlength="25" name="workphonenumber" type="text" value="" /></td>
         </tr>
         <tr>
-            <td><label for="WorkPhoneExtension">Work Extension:</label></td>
-            <td><input id="WorkPhoneExtension" maxlength="10" name="WorkPhoneExtension" type="text" value="" /></td>
+            <td><label for="workphoneextension">Work Extension:</label></td>
+            <td><input id="workphoneextension" maxlength="10" name="workphoneextension" type="text" value="" /></td>
         </tr>
         <tr>
-            <td><label for="CellPhoneNumber">Cell Phone:</label></td>
-            <td><input id="CellPhoneNumber" maxlength="25" name="CellPhoneNumber" type="text" value="" /></td>
+            <td><label for="cellphonenumber">Cell Phone:</label></td>
+            <td><input id="cellphonenumber" maxlength="25" name="cellphonenumber" type="text" value="" /></td>
         </tr>
 
         <tr>
             <td>
-                <label for="PhonePreferenceId">Phone Preference:</label>
+                <label for="phonepreferenceid">Phone Preference:</label>
 
             </td>
             <td>
 
-<select id="PhonePreferenceId" name="PhonePreferenceId">
+<select id="phonepreferenceid" name="phonepreferenceid">
 
         <option id="PhonePreferenceId0" value="0" selected='selected'  >Not Specified</option>
 
@@ -1628,9 +1562,9 @@
         </tr>
 
         <tr>
-            <td><label for="LanguageId">Language:</label></td>
+            <td><label for="languageid">Language:</label></td>
             <td>
-<select id="LanguageId" name="LanguageId">
+<select id="languageid" name="languageid">
 
         <option id="LanguageIdNot_Specified" value="Not Specified"  >Not Specified</option>
 
@@ -1654,9 +1588,9 @@
 
             <tr>
                 <td colspan="2">
-                    <input type="checkbox" id="AcceptOrganization" name="AcceptOrganization" value="True" class="required SkinnyCheckbox"  title="You must accept the volunteer policy"  /><label for="AcceptOrganization">I agree with the organization's policies.</label>
+                    <input type="checkbox" id="acceptorganization" name="acceptorganization" value="True" class="required SkinnyCheckbox"  title="You must accept the volunteer policy"  /><label for="acceptorganization">I agree with the organization's policies.</label>
                     <p> Organization's Policies: </p>
-                    <p>A volunteers must attend orientation prior to beginning volunteering.</p>
+                    <p>A volunteer must attend orientation prior to beginning volunteering.</p>
                 </td>
             </tr>
 
@@ -1665,144 +1599,7 @@
                 <input type="submit" id="NewUserContactDetailsButton" name="NewUserContactDetailsButton" value="Save and Continue" />
             </td>
         </tr>
-    </table>
-    <input id="CommunityHubGUID" name="CommunityHubGUID" type="hidden" value="" />
-<input id="OrganizationGUID" name="OrganizationGUID" type="hidden" value="1a32e143-de77-4ddf-8c9b-1b1ef9cfac44" />
-<input id="SignUpFormId" name="SignUpFormId" type="hidden" value="1" />
-<input id="CommunityHubName" name="CommunityHubName" type="hidden" value="" />
-<input id="OrganizationName" name="OrganizationName" type="hidden" value="The Bike Depot" />
-<input id="activityGUID" name="activityGUID" type="hidden" value="" />
-<input id="IsNewCommunityHubMember" name="IsNewCommunityHubMember" type="hidden" value="False" />
-
-<script type="text/javascript">
-
-    function v2GetSignUpCommonModel() {
-        var commonData = {};
-        commonData.CommunityHubGUID = $('#CommunityHubGUID').val();
-        commonData.OrganizationGUID = $('#OrganizationGUID').val();
-        commonData.SignUpFormId = $('#SignUpFormId').val();
-        commonData.CommunityHubName = $('#CommunityHubName').val();
-        commonData.OrganizationName = $('#OrganizationName').val();
-        commonData.activityGUID = $('#activityGUID').val();
-        commonData.IsNewCommunityHubMember = $('#IsNewCommunityHubMember').val();
-
-        return JSON.stringify(commonData);
-    }
-
-</script><noscript></noscript>
    </form>
-       <!-- <div id="CommunityHubPolicyHolder" style="display:none;">
-
-    </div>
-    <div id="OrganizationPolicyHolder" style="display:none;">
-
-<p>A volunteers must attend orientation prior to beginning volunteering.</p>
-
-    </div>
-
-   <script type="text/javascript">xVal.AttachValidator(null, {"Fields":[{"FieldName":"PhonePreferenceId","FieldRules":[{"RuleName":"DataType","RuleParameters":{"Type":"Integer"}},{"RuleName":"Range","RuleParameters":{"Min":"0","Type":"decimal"},"Message":"Phone preference is required"}]},{"FieldName":"Username","FieldRules":[{"RuleName":"Required","RuleParameters":{},"Message":"Username is required"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"6","MaxLength":"100"},"Message":"Username must be between 6 and 100 characters long"}]},{"FieldName":"Password","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"6","MaxLength":"50"},"Message":"Password must be between 6 and 50 characters long"},{"RuleName":"Required","RuleParameters":{},"Message":"Password is required"}]},{"FieldName":"ConfirmPassword","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"6","MaxLength":"50"},"Message":"Confirm Password must be between 6 and 50 characters long"},{"RuleName":"Required","RuleParameters":{},"Message":"Confirm Password is required"}]},{"FieldName":"NameFirstName","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"First name should be a maximum of 50 characters long"},{"RuleName":"Required","RuleParameters":{},"Message":"First name is required"}]},{"FieldName":"NameLastName","FieldRules":[{"RuleName":"Required","RuleParameters":{},"Message":"Last name is required"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"Last name should be a maximum of 50 characters long"}]},{"FieldName":"NameMiddleName","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"Middle name should be a maximum of 50 characters long"}]},{"FieldName":"NameTitle","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"Title should be a maximum of 50 characters long"}]},{"FieldName":"NameSuffix","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"Suffix should be a maximum of 50 characters long"}]},{"FieldName":"AddressAddress1","FieldRules":[{"RuleName":"Required","RuleParameters":{},"Message":"Address 1 is required"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"100"},"Message":"Address 1 should be a maximum of 100 characters long"}]},{"FieldName":"AddressAddress2","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"100"},"Message":"Address 2 should be a maximum of 100 characters long"}]},{"FieldName":"AddressCity","FieldRules":[{"RuleName":"Required","RuleParameters":{},"Message":"City is required"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"50"},"Message":"City should be a maximum of 50 characters long"}]},{"FieldName":"AddressCountryId","FieldRules":[{"RuleName":"Required","RuleParameters":{},"Message":"Country is required"}]},{"FieldName":"AddressPostalCode","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"10"},"Message":"Zip code should be a maximum of 10 characters long"},{"RuleName":"Required","RuleParameters":{},"Message":"Zip code is required"}]},{"FieldName":"EmailAddressValue","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"100"},"Message":"Email address should be a maximum of 100 characters long"},{"RuleName":"Required","RuleParameters":{},"Message":"Email address is required"},{"RuleName":"DataType","RuleParameters":{"Type":"EmailAddress"},"Message":"Email address is invalid"}]},{"FieldName":"SecondaryEmailAddressValue","FieldRules":[{"RuleName":"DataType","RuleParameters":{"Type":"EmailAddress"},"Message":"Secondary email address is invalid"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"100"},"Message":"Secondary email address should be a maximum of 100 characters long"}]},{"FieldName":"MobileEmailAddressValue","FieldRules":[{"RuleName":"DataType","RuleParameters":{"Type":"EmailAddress"},"Message":"Mobile email address is invalid"},{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"100"},"Message":"Mobile email address should be a maximum of 100 characters long"}]},{"FieldName":"HomePhoneNumber","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"25"},"Message":"Home phone should be a maximum of 25 characters long"}]},{"FieldName":"WorkPhoneNumber","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"25"},"Message":"Work phone should be a maximum of 25 characters long"}]},{"FieldName":"WorkPhoneExtension","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"10"},"Message":"Work phone extension should be a maximum of 10 characters long"}]},{"FieldName":"CellPhoneNumber","FieldRules":[{"RuleName":"StringLength","RuleParameters":{"MinLength":"0","MaxLength":"25"},"Message":"Cell phone should be a maximum of 25 characters long"}]}]}, {})</script><noscript></noscript>
-
-   <script type="text/javascript">
-       $(function () {
-           v2WireUpAccessibleToolTips();
-           $('#NewUserContactDetailsButton').button();
-           $('input.overMe').NewlabelOver();
-           v2SetUpDatePicker($('.DateTextBox'));
-
-           $('#UserName').focus();
-           $('#NewUserContactDetailsForm').submit(function (e) {
-               $('#ServerSideMessage').hide();
-               $('#ServerSideErrors').hide();
-
-               if ($(this).valid()) {
-                   return true;
-               }
-               else {
-                   v2ShowValidationErrors();
-                   e.preventDefault();
-                   return true;
-               }
-
-           });
-
-           $('#OrganizationPolicyLink').click(function (e) {
-               e.preventDefault();
-               var title = "The Bike Depot";
-               var height = "500";
-               var width = "500";
-               var dialogId = "OrganizationPolicyDialog"
-               var dialog = v2BuildCustomDialog(title, height, width, dialogId);
-               dialog.html($('#OrganizationPolicyHolder').html());
-               dialog.dialog("option", "buttons", {
-                   "Close": function () {
-                       dialog.dialog('close');
-                   }
-               });
-               dialog.dialog('open');
-
-           });
-
-           $('#CommunityHubPolicyLink').click(function (e) {
-               e.preventDefault();
-               var title = "";
-               var height = "500";
-               var width = "500";
-               var dialogId = "CommunityHubPolicyDialog"
-               var dialog = v2BuildCustomDialog(title, height, width, dialogId);
-               dialog.html($('#CommunityHubPolicyHolder').html());
-               dialog.dialog("option", "buttons", {
-                   "Close": function () {
-                       dialog.dialog('close');
-                   }
-               });
-               dialog.dialog('open');
-
-           });
 
 
-       });
-   </script><noscript></noscript>
 
-
-    </div>
-
-    <hr style="height:41px; width:1002px; border:0px; color:#E5E5E5; background-color:#E5E5E5;margin-top:27px; margin-bottom:10px;" />
-
-    <div id="MainDivHolder" style="display:none;">
-
-        <div id="ValidationErrorMessageHolder" class="NoDisplay">
-            <h1 style="padding-top:0px; margin-top:0px; font-size:1em;" id="ValidationMessageTitle">Validation Errors</h1>
-            <ul id="ValidationErrorMessages">
-                <li style="display:none;"></li>
-            </ul>
-        </div>
-    </div>
-    <div style="width:934px; margin:0 auto;text-align:left;">
-
-    </div>
-</body>
-</html>
- -->
- Username:
-Password:
-Confirm Password:
-Title:
-First Name:
-Middle name:
-Last Name:
-Suffix:
-Address Line 1:
-Address Line 2:
-City:
-Country:
-State:
-Zip Code:
-Primary Email:
-Secondary Email:
-Mobile Email:
-Home Phone:
-Work Phone:
-Work Extension:
-Cell Phone:
-Phone Preference:
-Language:

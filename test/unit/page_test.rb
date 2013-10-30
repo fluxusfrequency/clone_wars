@@ -1,6 +1,6 @@
 require './test/helpers/unit_helper.rb'
 require './lib/clone_wars'
-require './lib/page'
+require './lib/clone_wars/page'
 
 class PageTest < Minitest::Test
 
@@ -16,5 +16,5 @@ class PageTest < Minitest::Test
     hash = {"id" => "1", "title" => "title", "body" => "body", "url" => "url"}
     assert_equal hash, page.to_h
   end
-  
+
 end
