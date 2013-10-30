@@ -5,50 +5,61 @@ module Sinatra
 
     def self.registered(app)
       app.get '/about/mission-vision-and-values' do
-        erb :MissionVisionAndValues
+        url = '/about/mission-vision-and-values'
+        erb :MissionVisionAndValues, locals: {url: url}
       end
 
       app.get '/about/history' do
-        erb :History
+        url = '/about/history'
+        erb :History, locals: {url: url}
       end
 
       app.get '/about/staff-board' do
-        erb :StaffBoard
+        url = '/about/staff-board'
+        erb :StaffBoard, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/38-james-pullen' do
-        erb :JamesPullen
+        url = '/about/staff-board/17-about/staff-board/38-james-pullen'
+        erb :JamesPullen, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/39-ryne-emory' do
-        erb :RyneEmory
+        url = '/about/staff-board/17-about/staff-board/39-ryne-emory'
+        erb :RyneEmory, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/44-morgan-matter' do
-        erb :MorganMatter
+        url = '/about/staff-board/17-about/staff-board/44-morgan-matter'
+        erb :MorganMatter, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/43-bill-davis' do
-        erb :BillDavis
+        url = '/about/staff-board/17-about/staff-board/43-bill-davis'
+        erb :BillDavis, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/42-mike-decker' do
-        erb :MikeDecker
+        url = '/about/staff-board/17-about/staff-board/42-mike-decker'
+        erb :MikeDecker, locals: {url: url}
       end
 
       app.get '/about/staff-board/17-about/staff-board/7-board' do
-        erb :BoardOfDirectors
+        url = '/about/staff-board/17-about/staff-board/7-board'
+        erb :BoardOfDirectors, locals: {url: url}
       end
 
       app.get '/about/contact' do
-        erb :ContactHours
+        url = '/about/contact'
+        erb :ContactHours, locals: {url: url}
       end
 
       app.get '/about/privacy-policy' do
-        erb :PrivacyPolicy
+        url = '/about/privacy-policy'
+        erb :PrivacyPolicy, locals: {url: url}
       end
     end
-    
+
   end
   register About
 end

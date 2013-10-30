@@ -1,19 +1,22 @@
 require 'sinatra/base'
 
 module Sinatra
-  module BikeShop 
+  module BikeShop
 
     def self.registered(app)
       app.get '/bike-shop/retail' do
-        erb :Retail
+        url = '/bike-shop/retail'
+        erb :Retail, locals: {url: url}
       end
 
       app.get '/bike-shop/service' do
-        erb :ServiceMenu
+        url = '/bike-shop/service'
+        erb :ServiceMenu, locals: {url: url}
       end
 
       app.get '/bike-shop/xtracycle' do
-        erb :Xtracycle
+        url = '/bike-shop/xtracycle'
+        erb :Xtracycle, locals: {url: url}
       end
     end
   end

@@ -5,30 +5,35 @@ module Sinatra
 
     def self.registered(app)
       app.get '/about' do
-        erb :About
+        erb :About, locals: {url: url}
       end
 
       app.get '/programs' do
-        erb :Programs
+        url = '/programs'
+        erb :Programs, locals: {url: url}
       end
 
       app.get '/bike-shop' do
-        erb :BikeShop
+        url = '/bike-shop'
+        erb :BikeShop, locals: {url: url}
       end
 
       app.get '/support' do
-        erb :Support
+        url = '/support'
+        erb :Support, locals: {url: url}
       end
 
       app.get '/events' do
-        erb :Events
+        url = '/events'
+        erb :Events, locals: {url: url}
       end
 
       app.get '/links' do
-        erb :Links
+        url = '/links'
+        erb :Links, locals: {url: url}
       end
     end
-    
+
   end
   register BasicRoutes
 end
