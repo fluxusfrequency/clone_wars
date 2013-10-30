@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/clone_wars'
 require './lib/app/about'
+require './lib/app/auth'
 require './lib/app/basic_routes'
 require './lib/app/bike-shop'
 require './lib/app/events'
@@ -14,9 +16,11 @@ class CloneWarApp < Sinatra::Base
   set :root, 'lib/app'
 
   register Sinatra::About
+  register Sinatra::Auth
   register Sinatra::BasicRoutes
   register Sinatra::BikeShop
   register Sinatra::Events
+  register Sinatra::Flash
   register Sinatra::Links
   register Sinatra::Program
   register Sinatra::Support

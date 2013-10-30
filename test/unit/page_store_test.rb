@@ -6,49 +6,7 @@ require './lib/page'
 class PageStoreTest < Minitest::Test
 
   def teardown
-    PageStore.clear
-  end
-
-  def test_save_and_retrieve_a_page
-    page = Page.new("title" => "about","body" => "text", "url" => "/sample")
-    about = PageStore.save(page)
-
-    assert_equal 1, PageStore.count
-
-    page = PageStore.find(about)
-    assert_equal "about", page.title
-    assert_equal "text", page.body
-  end
-
-  def test_save_and_retrieve_one_of_many_pages
-    about = Page.new("title" => "about", "body" => "this is the body text", "url" => "/sample")
-    bikeshop = Page.new("title" => "bikeshop", "body" => "this is the body text", "url" => "/sample")
-    events = Page.new("title" => "events", "body" => "this is the body text", "url" => "/sample")
-    id1 = PageStore.save(about)
-    id2 = PageStore.save(bikeshop)
-    id3 = PageStore.save(events)
-
-    assert_equal 3, PageStore.count
-
-    page = PageStore.find(id2)
-    assert_equal "bikeshop", page.title
-  end
-
-  def test_update_idea
-    page = Page.new("title" => "events","body" => "this is the body text", "url" => "/sample")
-    id = PageStore.save(page)
-
-    page = PageStore.find(id)
-    page.title = "events"
-    page.body = "New body text!"
-
-    PageStore.save(page)
-
-    assert_equal 1, PageStore.count
-
-    page = PageStore.find(id)
-    assert_equal "events", page.title
-    assert_equal "New body text!", page.body
+    PageStore.delete_all
   end
 
   def test_it_has_a_database
@@ -59,15 +17,58 @@ class PageStoreTest < Minitest::Test
     assert_equal Sequel.sqlite('./test.sqlite3').inspect, PageStore.database.inspect
   end
 
-  def test_it_loads_the_database
-    assert_kind_of Page, PageStore.all.first
+  def test_the_database_is_empty_on_load
+    assert_equal 0, Sequel.sqlite('./test.sqlite3')[:pages].count
   end
 
-  def test_it_can_find_a_page_by_id
-    page = Page.new("title" => "events", "body" => "this is the body text", "url" => "/sample")
-    id = PageStore.save(page)
-
-    assert_kind_of Page, PageStore.find(page.id)
+  def test_save_adds_a_pages_params_to_the_db
+    page_hash = {"title" => "New Page", "body" => "This is my body", "url" => "/new/page"}
+    page = Page.new(page_hash)
+    PageStore.save(page)
+    assert_equal 1, Sequel.sqlite('./test.sqlite3')[:pages].count
   end
 
+  def test_find_finds_a_page_in_the_db
+    page_hash = {"title" => "New Page", "body" => "This is my body", "url" => "/new/page"}
+    page = Page.new(page_hash)
+    PageStore.save(page)
+    saved_page =  Sequel.sqlite('./test.sqlite3')[:pages].to_a.last
+    found = PageStore.find(saved_page[:id])
+    assert_equal "New Page", found.title
+  end
+
+  def test_find_by_url_returns_the_page_with_that_url
+    page_hash = {"title" => "New Page", "body" => "This is my body", "url" => "/new/page"}
+    page = Page.new(page_hash)
+    PageStore.save(page)
+    found = PageStore.find_by_url("/new/page")
+    assert_equal "New Page", found.title
+  end
+
+  def test_update_edits_an_existing_page
+    # create a new page and save it to the db
+    page_hash = {"title" => "New Page", "body" => "This is my body", "url" => "/new/page"}
+    page = Page.new(page_hash)
+    PageStore.save(page)
+
+    # make a change and update the db
+    changes = {"title" => "Edited Page"}
+    PageStore.update(page, changes)
+    found = PageStore.find_by_url("/new/page")
+    assert_equal "Edited Page", found.title
+
+    # make sure the old page was deleted
+    assert_equal 1, PageStore.page_table.select(:url => "/new/page").count
+  end
+
+  def test_delete_destroys_an_existing_page
+    # create a new page and save it to the db
+    page_hash = {"title" => "New Page", "body" => "This is my body", "url" => "/new/page"}
+    page = Page.new(page_hash)
+    PageStore.save(page)
+
+    #delete the page
+    PageStore.delete(page)
+    assert_equal 0, PageStore.page_table.select(:url => "/new/page").count
+  end
 end
