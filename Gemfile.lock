@@ -26,7 +26,6 @@ GEM
     multi_json (1.8.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    pg (0.17.0)
     pry (0.9.6)
       coderay (>= 0.9.8)
       method_source (>= 0.6.5)
@@ -77,7 +76,6 @@ DEPENDENCIES
   binding_of_caller
   capybara
   minitest
-  pg
   pry
   rack-test
   sequel
