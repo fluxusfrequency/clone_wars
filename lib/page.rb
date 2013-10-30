@@ -9,4 +9,13 @@ class Page
     @url = attributes["url"]
   end
 
+  def to_h
+    {
+      "id" => id,
+      "title" => title,
+      "body" => body,
+      "url" => url
+    }
+  end
+
 end

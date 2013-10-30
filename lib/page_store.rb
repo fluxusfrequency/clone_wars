@@ -2,14 +2,11 @@ require 'sequel'
 class PageStore
 
   def self.save(page)
-    @all ||= []
-    page.id ||= next_id
-    @all[page.id] = page
-    page.id
+    database[:pages].insert(page.to_h)
   end
 
   def self.find(id)
-    @all[id]
+    Page.new(database[:pages].find(id).first)
   end
 
   def self.next_id
@@ -17,15 +14,23 @@ class PageStore
   end
   
   def self.count
-    @all.length
+    all.to_a.length
   end
 
   def self.all
-    @all ||= database[:pages].to_a
+    @all = get_pages_from_db
+  end
+
+  def self.get_pages_from_db
+    pages = []
+    database[:pages].to_a.each do |hash|
+      pages << Page.new(hash)
+    end
+    pages
   end
 
   def self.clear
-    @all = []
+    database[:pages].delete
   end
 
   def self.database
