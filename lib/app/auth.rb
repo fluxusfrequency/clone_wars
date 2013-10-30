@@ -33,7 +33,7 @@ module Sinatra
         if params[:username] == settings.username && params[:password] == settings.password
           session[:admin] = true
           flash[:notice] = "You are now logged in as #{settings.username}."
-          redirect to('/')
+          erb :Home, locals: {url: url}
         else
           flash[:notice] = "The username or password you entered was incorrect."
           redirect to('/login')

@@ -15,7 +15,8 @@ urls = [
 '/programs/classes', 
 '/about/contact', 
 '/support/donate-bikes', 
-'/programs/earn-a-bike', 
+'/programs/earn-a-bike',
+'/edit',
 '/events', 
 '/programs/fix-your-bike', 
 '/links/friends', 
@@ -23,7 +24,8 @@ urls = [
 '/',
 '/about/staff-board/17-about/staff-board/38-james-pullen', 
 '',
-'/links', 
+'/links',
+'/login', 
 '/support/memberships', 
 '/about/staff-board/17-about/staff-board/42-mike-decker', 
 '/about/mission-vision-and-values', 
@@ -36,12 +38,13 @@ urls = [
 '/bike-shop/retail', 
 '/about/staff-board/17-about/staff-board/39-ryne-emory', 
 '/bike-shop/service', 
+'',
 '/about/staff-board', 
 '/support', 
 '/support/volunteer', 
 '/links/we-love', 
 '/support/wish-list', 
-'/bike-shop/xtracycle', ]
+'/bike-shop/xtracycle' ]
 
 database = Sequel.sqlite('clone_wars.sqlite3')
 pages = database.from(:pages).to_a
