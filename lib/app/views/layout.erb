@@ -13,7 +13,7 @@ Bike parts denver
 Bicycle parts denver
 " />
   <meta name="generator" content="Joomla! - Open Source Content Management" />
-  <title>Home</title>
+  <title><% title ||= "Home" %><%= "#{title}" %></title>
   <link rel="stylesheet" href="/plugins/system/jcemediabox/css/jcemediabox.css?version=114" type="text/css" />
   <link rel="stylesheet" href="/plugins/system/jcemediabox/themes/standard/css/style.css?version=114" type="text/css" />
   
@@ -57,12 +57,13 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
     <div id="search">   
       
     </div>
+    <%= styled_flash %>
   </div>
   
   <div id="topmenu">
     
 <ul class="menu">
-<li class="item-101 current active"><a href="/" >Home</a></li><li class="item-103 deeper parent"><a href="/about" >About</a><ul><li class="item-147"><a href="/about/mission-vision-and-values" >Mission, Vision and Values</a></li><li class="item-114"><a href="/about/history" >History</a></li><li class="item-115"><a href="/about/staff-board" >Staff &amp; Board</a></li><li class="item-120"><a href="/about/contact" >Contact &amp; Hours</a></li><li class="item-150"><a href="/about/privacy-policy" >Privacy Policy</a></li></ul></li><li class="item-106 deeper parent"><a href="/programs" >Programs</a><ul><li class="item-133"><a href="/programs/earn-a-bike" >Earn A Bike</a></li><li class="item-134"><a href="/programs/fix-your-bike" >Fix Your Bike</a></li><li class="item-135"><a href="/programs/classes" >Classes</a></li><li class="item-136"><a href="/programs/bike-camp" >Bike Camp</a></li><li class="item-152"><a href="/programs/bike-rodeo" >Bike Rodeo</a></li></ul></li><li class="item-110 deeper parent"><a href="/bike-shop" >Bike Shop</a><ul><li class="item-137"><a href="/bike-shop/retail" >Retail</a></li><li class="item-138"><a href="/bike-shop/service" >Service Menu</a></li><li class="item-187"><a href="/bike-shop/xtracycle" >Xtracycle </a></li></ul></li><li class="item-112 deeper parent"><a href="/support" >Support</a><ul><li class="item-139"><a href="/support/volunteer" >Volunteer</a></li><li class="item-140"><a href="/support/donate-bikes" >Donate Bikes</a></li><li class="item-148"><a href="/support/organizing-a-bike-collection-drive" >Organizing a Bike Collection Drive</a></li><li class="item-141"><a href="/support/memberships" >Memberships</a></li><li class="item-121"><a href="/support/wish-list" >Wish List</a></li></ul></li><li class="item-111 deeper parent"><a href="/events" >Events</a><ul><li class="item-142"><a href="/events/calendar" >Calendar</a></li><li class="item-143"><a href="/events/park-hill-family-bike-ride" >Park Hill Family Bike Ride</a></li></ul></li><li class="item-113 deeper parent"><a href="/links" >Links</a><ul><li class="item-144"><a href="/links/business-partners" >Business Partners</a></li><li class="item-145"><a href="/links/friends" >Friends</a></li><li class="item-146"><a href="/links/we-love" >We Love...</a></li></ul></li></ul>
+<li class="item-101"><a href="/" >Home</a></li><li class="item-103 deeper parent"><a href="/about" >About</a><ul><li class="item-147"><a href="/about/mission-vision-and-values" >Mission, Vision and Values</a></li><li class="item-114"><a href="/about/history" >History</a></li><li class="item-115"><a href="/about/staff-board" >Staff &amp; Board</a></li><li class="item-120"><a href="/about/contact" >Contact &amp; Hours</a></li><li class="item-150"><a href="/about/privacy-policy" >Privacy Policy</a></li></ul></li><li class="item-106 deeper parent"><a href="/programs" >Programs</a><ul><li class="item-133"><a href="/programs/earn-a-bike" >Earn A Bike</a></li><li class="item-134"><a href="/programs/fix-your-bike" >Fix Your Bike</a></li><li class="item-135"><a href="/programs/classes" >Classes</a></li><li class="item-136"><a href="/programs/bike-camp" >Bike Camp</a></li><li class="item-152"><a href="/programs/bike-rodeo" >Bike Rodeo</a></li></ul></li><li class="item-110 deeper parent"><a href="/bike-shop" >Bike Shop</a><ul><li class="item-137"><a href="/bike-shop/retail" >Retail</a></li><li class="item-138"><a href="/bike-shop/service" >Service Menu</a></li><li class="item-187"><a href="/bike-shop/xtracycle" >Xtracycle </a></li></ul></li><li class="item-112 deeper parent"><a href="/support" >Support</a><ul><li class="item-139"><a href="/support/volunteer" >Volunteer</a></li><li class="item-140"><a href="/support/donate-bikes" >Donate Bikes</a></li><li class="item-148"><a href="/support/organizing-a-bike-collection-drive" >Organizing a Bike Collection Drive</a></li><li class="item-141"><a href="/support/memberships" >Memberships</a></li><li class="item-121"><a href="/support/wish-list" >Wish List</a></li></ul></li><li class="item-111 deeper parent"><a href="/events" >Events</a><ul><li class="item-142"><a href="/events/calendar" >Calendar</a></li><li class="item-143"><a href="/events/park-hill-family-bike-ride" >Park Hill Family Bike Ride</a></li></ul></li><li class="item-113 deeper parent"><a href="/links" >Links</a><ul><li class="item-144"><a href="/links/business-partners" >Business Partners</a></li><li class="item-145"><a href="/links/friends" >Friends</a></li><li class="item-146"><a href="/links/we-love" >We Love...</a></li></ul></li></ul>
 
   </div>
   <br clear="all" />
@@ -119,7 +120,6 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
 
 
   <!-- Contents -->
-  <%= styled_flash %>
   <%= yield %>
 
   <!-- Three Picture Places -->
@@ -136,18 +136,28 @@ JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:
       
     </div>
 
-  <!-- Footer -->
-  <div id="footer">
-    <form action="/edit" method = 'GET'>
-      <input type='hidden' name="url" value="<%=url%>"/>
-      <input type='submit' value="EDIT"/>
-      </form>   
-  </div>
-
-  <div id="push"></div>
-
 </div>
 
+<!-- Footer -->
+
+<div id="footer">
+  <fieldset>
+    <p style="display: inline">Admin:</p>
+    <% unless authorized? %>
+      <form action="/login" method='GET' style="display: inline">
+        <input type='submit' name="login" value="Login"/>
+      </form>
+    <% else %>
+      <form action="/edit" method='GET' style="display: inline">
+        <input type='hidden' name="url" value="<%=url%>"/>
+        <input type='submit' value="Edit" style="display: inline">
+      </form> 
+      <form action="/logout" method='GET' style="display: inline">
+        <input type='submit' name="logout" value="Logout"/>
+      </form>
+    <% end %>
+  </fieldset>
+</div>
 
 
 </body>

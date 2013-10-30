@@ -1599,4 +1599,17 @@ body.contentpane {
   color: #FFFFFA;
 }
 
-
+.flash {
+  border: 1px solid gold;
+  background: none repeat scroll 0% 0% lightyellow;
+  padding: 10px 20px 10px 40px;
+  margin: 10px 0px;
+  border-radius: 5px 5px 5px 5px;
+  color: rgb(222, 174, 0);
+  line-height: 120%;
+  text-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  clear: both;
+}

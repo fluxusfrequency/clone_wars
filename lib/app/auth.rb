@@ -10,7 +10,10 @@ module Sinatra
       end
 
       def protected!
-        halt 401,slim(:unauthorized) unless authorized?
+        unless authorized?
+          flash[:notice] = "You must be logged in to do that."
+          redirect '/login'
+        end
       end
     end
 
@@ -39,7 +42,7 @@ module Sinatra
 
       app.get '/logout' do
         session[:admin] = nil
-        flash[:notice] = "You have now logged out."
+        flash[:notice] = "You have logged out."
         redirect to ('/')
       end
     end

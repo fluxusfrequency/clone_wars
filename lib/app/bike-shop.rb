@@ -6,19 +6,26 @@ module Sinatra
     def self.registered(app)
       app.get '/bike-shop/retail' do
         url = '/bike-shop/retail'
-        erb :Retail, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/bike-shop/service' do
         url = '/bike-shop/service'
-        erb :ServiceMenu, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
 
       app.get '/bike-shop/xtracycle' do
         url = '/bike-shop/xtracycle'
-        erb :Xtracycle, locals: {url: url}
+        body = PageStore.find_by_url(url).body
+        title = PageStore.find_by_url(url).title
+        erb :Show, locals: {url: url, body: body, title: title}
       end
     end
+    
   end
   register BikeShop
 end

@@ -6,15 +6,20 @@ module Sinatra
     def self.registered(app)
 
       app.get '/edit' do
-        puts params.inspect
+        protected!
         page = PageStore.find_by_url(params["url"])
         erb :edit, locals: {page: page}
       end
 
-      app.post 'edit/:page' do |page|
-        page = params[:page]
-        PageStore.save(page.to_h)
-        redirect page.url
+      app.put '/edit' do
+        protected!
+        page = PageStore.find_by_url(params["url"])
+        attributes = 
+        { "title" => params["title"], 
+          "body" => params["body"], 
+          "url" => params["url"] }
+        PageStore.update(page, attributes)
+        redirect "#{page.url}"
       end
     end
   end
