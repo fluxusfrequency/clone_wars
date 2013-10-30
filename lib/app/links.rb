@@ -12,7 +12,7 @@ module Sinatra
 
       app.get '/links/friends' do
         url = '/links/friends'
-        erb :Friends locals: {url: url}
+        erb :Friends, locals: {url: url}
       end
 
       app.get '/links/we-love' do

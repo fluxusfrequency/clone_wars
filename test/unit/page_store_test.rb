@@ -1,7 +1,5 @@
 require './test/helpers/unit_helper'
-require './lib/clone_wars'
-require './lib/page_store'
-require './lib/page'
+require './lib/clone_wars.rb'
 
 class PageStoreTest < Minitest::Test
 

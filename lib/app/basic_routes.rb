@@ -5,6 +5,7 @@ module Sinatra
 
     def self.registered(app)
       app.get '/about' do
+        url = '/about'
         erb :About, locals: {url: url}
       end
 

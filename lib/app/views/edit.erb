@@ -6,14 +6,15 @@
 
 <form action='/<%=page.url %>' method='POST'>
 
-  You are editing : <%=page.url %> <br/><br/>
-
-
-
-  <input type='text' name='page[title]'  value="<%= page.title %>"/> Page Title<br/><br/>
-  <p> Make Changes to body text: <p>
-  <textarea name='page[body]'style="width: 1200px; height: 1500px;"><%= page.body %></textarea> Body<br/>
-  <input type='submit'>Submit Your Changes></input>
+  <p>You are editing the page called: <strong><%=page.title %></strong> <br />
+    It is found at this address: <strong><%=page.url %></strong> </p>
+  <br />
+  <p> Make Changes To Title:</p>
+  <input type='text' name='page[title]'  value="<%= page.title %>"/><br/><br/>
+  <p> Make Changes To Body Text: <p>
+  <textarea name='page[body]'style="width: 1200px; height: 1500px;"><%= page.body %></textarea><br/>
+  <br />
+  <input type='submit' value="Save"></input>
   </form>
     </div>
 </div>

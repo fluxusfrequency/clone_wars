@@ -5,12 +5,10 @@ module Sinatra
 
     def self.registered(app)
 
-      app.get '/edit/:url' do |url|
-        throw
-        page = PageStore.find_by_url(url)
+      app.get '/edit' do
+        puts params.inspect
+        page = PageStore.find_by_url(params["url"])
         erb :edit, locals: {page: page}
-
-
       end
 
       app.post 'edit/:page' do |page|
