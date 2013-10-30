@@ -5,26 +5,26 @@
 
   <div class="item-page">
 
-    <form action='/edit' method='POST'>
+    <form action='/edit' method='POST' style="display: inline">
 
       <p>You are editing the page called: <strong><%=page.title %></strong><br />
         It is found at this address: <strong><%=page.url %></strong> </p><br />
 
       <p> Make Changes To Title:</p>
-      <input type='text' name='title' value="<%= page.title %>"/><br/><br/>
+      <input type='text' name='title' value="<%= page.title %>"><br/><br/>
 
       <p> Make Changes To Body Text: <p>
       <textarea name='body'style="width: 1200px; height: 1500px;" 
         value="<%= page.body %>"></textarea><br/><br />
 
-      <input type='hidden' name="url" value="<%=page.url%>"/>
-      <input type="hidden" name="_method" value="PUT"/>
-      <input type='submit' value="Save"/>
+      <input type='hidden' name="url" value="<%=page.url%>">
+      <input type="hidden" name="_method" value="PUT">
+      <input type='submit' value="Save" style="display: inline">
 
     </form>
 
-    <form action='/' method='GET'>
-      <input type='submit' value="Cancel"/>
+    <form action='/' method='GET' style="display: inline">
+      <input type='submit' value="Cancel" style="display: inline">
     </form>
 
   </div>
