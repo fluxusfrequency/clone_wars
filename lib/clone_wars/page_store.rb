@@ -24,6 +24,7 @@ class PageStore
   def find_by_url(url)
     # result = page_table.to_a.first
     result = page_table.where(:url => url).to_a.last
+    puts url
     Page.new(
       {"id" => result[:id], 
       "body" => result[:body],
@@ -41,7 +42,7 @@ class PageStore
   end
 
   def delete(page)
-    page_table.select(:url => page.url).delete
+    page_table.where(:url => page.url).delete
   end
 
   def delete_all

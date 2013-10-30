@@ -30,9 +30,7 @@ class CloneWarApp < Sinatra::Base
 
   get '/' do
     url = '/'
-    body = PageStore.find_by_url(url).body
-    title = PageStore.find_by_url(url).title
-    erb :Show, locals: {url: url, body: body, title: title}
+    erb :Home, locals: {url: url}
   end
 
 #--- googlemaps link

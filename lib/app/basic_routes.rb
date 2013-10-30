@@ -13,6 +13,7 @@ module Sinatra
 
       app.get '/programs' do
         url = '/programs'
+        puts PageStore.find_by_url(url).inspect
         body = PageStore.find_by_url(url).body
         title = PageStore.find_by_url(url).title
         erb :Show, locals: {url: url, body: body, title: title}
