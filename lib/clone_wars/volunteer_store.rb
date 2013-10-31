@@ -3,34 +3,34 @@ require 'sequel'
 class VolunteerStore
   class << self
 
-    def save(page)
+    def save(volunteer)
       volunteer_table.insert({
-        "nametitle" => nametitle,
-        "namefirstname" => namefirstname,
-        "namemiddlename" => namemiddlename,
-        "namelastname" => namelastname,
-        "namesuffix" => namesuffix,
-        "addressaddress1" => addressaddress1,
-        "addressaddress2" => addressaddress2,
-        "addresscity" => addresscity,
-        "addresscountryid" => addresscountryid,
-        "addressprovinceid" => addressprovinceid,
-        "addresspostalcode" => addresspostalcode,
-        "emailaddressvalue" => emailaddressvalue,
-        "secondaryemailaddressvalue" => secondaryemailaddressvalue,
-        "mobileemailaddressvalue" => mobileemailaddressvalue,
-        "homephonenumber" => homephonenumber,
-        "workphonenumber" => workphonenumber,
-        "workphoneextension" => workphoneextension,
-        "cellphonenumber" => cellphonenumber,
-        "phonepreferenceid" => phonepreferenceid,
-        "languageid" => languageid,
-        "acceptorganization" => acceptorganization
+        "nametitle" => volunteer.nametitle,
+        "namefirstname" => volunteer.namefirstname,
+        "namemiddlename" => volunteer.namemiddlename,
+        "namelastname" => volunteer.namelastname,
+        "namesuffix" => volunteer.namesuffix,
+        "addressaddress1" => volunteer.addressaddress1,
+        "addressaddress2" => volunteer.addressaddress2,
+        "addresscity" => volunteer.addresscity,
+        "addresscountryid" => volunteer.addresscountryid,
+        "addressprovinceid" => volunteer.addressprovinceid,
+        "addresspostalcode" => volunteer.addresspostalcode,
+        "emailaddressvalue" => volunteer.emailaddressvalue,
+        "secondaryemailaddressvalue" => volunteer.secondaryemailaddressvalue,
+        "mobileemailaddressvalue" => volunteer.mobileemailaddressvalue,
+        "homephonenumber" => volunteer.homephonenumber,
+        "workphonenumber" => volunteer.workphonenumber,
+        "workphoneextension" => volunteer.workphoneextension,
+        "cellphonenumber" => volunteer.cellphonenumber,
+        "phonepreferenceid" => volunteer.phonepreferenceid,
+        "languageid" => volunteer.languageid,
+        "acceptorganization" => volunteer.acceptorganization
           })
     end
 
     def find(id)
-      result = page_table.where(:id => id).to_a.last
+      result = volunteer_table.where(:id => id).to_a.last
       Volunteer.new(
         {
         "nametitle" => result[:nametitle],
@@ -59,7 +59,7 @@ class VolunteerStore
     end
 
     def update(volunteer, attributes)
-      found = find(id)
+      found = find(volunteer.id)
       new_volunteer = Volunteer.new(found.to_h.merge(attributes))
       delete(found)
       save(new_volunteer)
