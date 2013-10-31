@@ -70,7 +70,7 @@ class VolunteerStore
     end
 
     def delete_all
-      page_volunteer.delete
+      volunteer_table.delete
     end
 
 
@@ -83,7 +83,7 @@ class VolunteerStore
     end
 
     def volunteer_table
-      database[:volunteer]
+      database[:volunteers]
     end
 
     end
