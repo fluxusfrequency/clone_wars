@@ -8,11 +8,13 @@ Dir['./lib/app/*.rb'].each do |file|
 end
 
 class CloneWarApp < Sinatra::Base
+  
   set :root, 'lib/app'
   set :method_override, true
 
   register Sinatra::Auth
   register Sinatra::About
+  register Sinatra::Apply
   register Sinatra::BasicRoutes
   register Sinatra::BikeShop
   register Sinatra::Events
