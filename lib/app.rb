@@ -1,6 +1,6 @@
-require 'sinatra'
-require 'sinatra/base'
-require 'sinatra/flash'
+# require 'sinatra'
+# require 'sinatra/base'
+# require 'sinatra/flash'
 require './lib/clone_wars.rb'
 
 Dir['./lib/app/*.rb'].each do |file|

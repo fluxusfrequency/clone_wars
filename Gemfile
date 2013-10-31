@@ -8,6 +8,7 @@ gem 'sinatra-flash'
 gem 'sequel'
 gem 'thin'
 gem 'sequel'
+gem 'pony'
 
 group :development do
   gem 'sqlite3'
