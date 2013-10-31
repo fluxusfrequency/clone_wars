@@ -41,7 +41,8 @@ urls = [
 '',
 '/about/staff-board', 
 '/support', 
-'/support/volunteer', 
+'/support/volunteer',
+'/support/application',
 '/links/we-love', 
 '/support/wish-list', 
 '/bike-shop/xtracycle' ]

@@ -1,5 +1,3 @@
-require 'sinatra/base'
-
 module Sinatra
   module Events
 
@@ -18,7 +16,7 @@ module Sinatra
         title = PageStore.find_by_url(url).title
         erb :Show, locals: {url: url, body: body, title: title}
       end
-    #---end of "events" dropdown
+
     end
   end
   register Events

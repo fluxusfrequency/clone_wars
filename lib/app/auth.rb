@@ -1,6 +1,3 @@
-require 'sinatra/base'
-require 'sinatra/flash'
-
 module Sinatra
   module Auth
     module Helpers

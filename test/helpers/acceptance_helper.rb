@@ -8,5 +8,4 @@ Bundler.require
 require 'rack/test'
 require 'minitest/autorun' 
 require 'minitest/pride'
-require 'sinatra'
-require 'sinatra/assetpack'
+require 'capybara'

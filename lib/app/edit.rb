@@ -1,5 +1,3 @@
-require 'sinatra/base'
-
 module Sinatra
   module Edit
 
@@ -18,10 +16,13 @@ module Sinatra
         { "title" => params["title"], 
           "body" => params["body"], 
           "url" => params["url"] }
-        PageStore.update(page, attributes)
+        if PageStore.update(page, attributes)
+          flash[:notice] = "Changes were saved."
+        end
         redirect "#{page.url}"
       end
     end
+    
   end
   register Edit
 end

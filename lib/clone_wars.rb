@@ -1,4 +1,3 @@
-require 'sinatra'
-require 'sinatra/base'
-require './lib/clone_wars/page'
-require './lib/clone_wars/page_store'
+Dir['./lib/clone_wars/*.rb'].each do |file|
+  require file
+end

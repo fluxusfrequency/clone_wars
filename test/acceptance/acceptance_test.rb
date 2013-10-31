@@ -1,8 +1,6 @@
 # require './test/helpers/acceptance_helper.rb'
-# require './test/helpers/unit_helper.rb'
 # require './lib/clone_wars'
 # require './lib/app'
-# require 'capybara'
 
 # class BikeCoopAppTest < Minitest::Test
 #   include Capybara::DSL

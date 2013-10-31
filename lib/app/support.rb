@@ -1,5 +1,3 @@
-require 'sinatra/base'
-
 module Sinatra
   module Support
 
@@ -19,21 +17,6 @@ module Sinatra
         erb :Show, locals: {url: url, body: body, title: title}
       end
 
-    # #---- Standard Volunteer application link in /volunteer
-    #   app.get 'https://app.volunteer2.com/Public/SignUp?organizationGUID=1a32e143-de77-4ddf-8c9b-1b1ef9cfac44&signupFormId=1' do
-
-    #   end
-
-    # #--- Community Service application link in /volunteer
-    #   app.get 'https://app.volunteer2.com/Public/SignUp?organizationGUID=1a32e143-de77-4ddf-8c9b-1b1ef9cfac44&signupFormId=2' do
-
-    #   end
-
-    # #----Log Your Hours Link in /volunteer
-    #   app.get 'https://app.volunteer2.com/Public/Login/Volunteer' do
-
-    #   end
-
       app.get '/support/donate-bikes' do
         url = '/support/donate-bikes'
         body = PageStore.find_by_url(url).body
@@ -47,10 +30,6 @@ module Sinatra
         title = PageStore.find_by_url(url).title
         erb :Show, locals: {url: url, body: body, title: title}
       end
-    # #---Link to PDF in /organizing-a-bike-collection-drive
-    #   app.get 'images/support/bikedrivepdf/hosting_a_bike_drive.pdf' do
-    #     erb :images
-    #   end
 
       app.get '/support/memberships' do
         url = '/support/memberships'
@@ -65,7 +44,7 @@ module Sinatra
         title = PageStore.find_by_url(url).title
         erb :Show, locals: {url: url, body: body, title: title}
       end
-#----end of "support" dropdown
+
     end
   end
   register Support

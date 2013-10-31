@@ -75,29 +75,3 @@ class Volunteer
   end
 
 end
-
-# database.create_table :volunteers do
-#     primary_key :id
-#     String      :nametitle
-#     String      :namefirstname
-#     String      :namemiddlename
-#     String      :namelastname
-#     String      :namesuffix
-#     String      :addressaddress1
-#     String      :addressaddress2
-#     String      :addresscity
-#     String      :addresscountryid
-#     String      :addressprovinceid
-#     String      :addresspostalcode
-#     String      :emailaddressvalue
-#     String      :secondaryemailaddressvalue
-#     String      :mobileemailaddressvalue
-#     String      :homephonenumber
-#     String      :workphonenumber
-#     String      :workphoneextension
-#     String      :cellphonenumber
-#     String      :phonepreferenceid
-#     String      :languageid
-#     Boolean     :acceptorganization
-
-# end

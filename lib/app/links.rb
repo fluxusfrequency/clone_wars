@@ -1,5 +1,3 @@
-require 'sinatra/base'
-
 module Sinatra
   module Links
 
@@ -26,7 +24,6 @@ module Sinatra
         erb :Show, locals: {url: url, body: body, title: title}
       end
 
-#--- end "Links" dropdown
     end
   end
   register Links

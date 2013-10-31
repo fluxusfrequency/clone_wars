@@ -1,5 +1,3 @@
-require 'sinatra/base'
-
 module Sinatra
   module Program
 
@@ -37,7 +35,7 @@ module Sinatra
         title = PageStore.find_by_url(url).title
         erb :Show, locals: {url: url, body: body, title: title}
       end
-#---end "programs" dropdown
+      
     end
   end
   register Program
