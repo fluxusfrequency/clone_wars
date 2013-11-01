@@ -48,7 +48,6 @@ urls = [
 '/bike-shop/xtracycle' ]
 
 database = Sequel.sqlite('clone_wars.sqlite3')
-pages = database.from(:pages).to_a
 
 Dir["./lib/app/views/*.erb"].each do |file|
   filename = file.to_s.gsub(/.erb/, "")
